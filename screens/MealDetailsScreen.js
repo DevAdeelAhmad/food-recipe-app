@@ -8,25 +8,24 @@ function MealDetailsScreen({ route }) {
   return (
     <>
       <View style={styles.container}>
-        <Image
-          style
-          source={{ uri: meal.imageUrl }}
-          width={"100%"}
-          height={300}
-        />
+        <Image style source={{ uri: meal.imageUrl }} width="100" height={300} />
         <Text style={styles.text}>{meal.title}</Text>
         <MealDetails
           duration={meal.duration}
           affordability={meal.affordability}
           complexity={meal.complexity}
         />
-        <Text style={styles.text}>Ingridients:</Text>
+        <View style={styles.subtitleContainer}>
+          <Text style={styles.subtitle}>Ingridients:</Text>
+        </View>
         {meal.ingredients.map((ingredient) => (
           <Text style={styles.text1} key={ingredient}>
             {ingredient}
           </Text>
         ))}
-        <Text style={styles.text}>Steps:</Text>
+        <View style={styles.subtitleContainer}>
+          <Text style={styles.subtitle}>Steps:</Text>
+        </View>
         {meal.steps.map((step) => (
           <Text style={styles.text1} key={step}>
             {step}
@@ -47,11 +46,25 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     color: "white",
+    padding: 6,
   },
   text1: {
     fontSize: 15,
     color: "#9e9e9e",
     textAlign: "center",
+    padding: 6,
   },
   imageStyle: {},
+  subtitle: {
+    color: "white",
+    fontSize: 18,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  subtitleContainer: {
+    marginHorizontal: 24,
+    marginVertical: 4,
+    borderBottomColor: "white",
+    borderBottomWidth: 2,
+  },
 });
