@@ -6,6 +6,7 @@ class Meal {
     affordability,
     complexity,
     imageUrl,
+    sadlnkasdlka,
     duration,
     ingredients,
     steps,
